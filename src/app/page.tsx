@@ -108,6 +108,9 @@ export default function Home() {
                       </TooltipContent>
                     </Tooltip>
                   </TooltipProvider>
+                  <p className="font-bold px-2">
+                  {formData.tileType === "normal" || formData.tileType === "regular" ? "Black and White Tiles" : formData.tileType === "white" ? "White Tiles" : formData.tileType === "black" ? "Black Tiles" : ""}
+                  </p>
                 </Label>
                 <Select
                   onValueChange={(value) => handleChange("tileType", value)}
@@ -154,6 +157,9 @@ export default function Home() {
                       </TooltipContent>
                     </Tooltip>
                   </TooltipProvider>
+                  <p className="font-bold px-2">
+                  {formData.useType === "commercial" ? "Black Tiles" : formData.useType === "home" ? "White Tiles" : ""}
+                  </p>
                 </Label>
                 <Select onValueChange={(value) => handleChange("useType", value)}>
                   <SelectTrigger
@@ -198,6 +204,9 @@ export default function Home() {
                       </TooltipContent>
                     </Tooltip>
                   </TooltipProvider>
+                  <p className="font-bold px-2">
+                  {formData.peopleCount > 10 ? "Black Tiles" : formData.peopleCount <= 10 ? "White Tiles" : ""}
+                  </p>
                 </Label>
                 <div className="flex items-center space-x-4">
                   <Slider

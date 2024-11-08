@@ -16,7 +16,7 @@ export async function POST(request: Request) {
           }
         }
       });
-      suggestedTiles = whiteAndBlackTiles.map((tile) => ({
+      suggestedTiles = whiteAndBlackTiles.map((tile: { name: string; color: string }) => ({
         name: tile.name,
         color: tile.color
       }));
@@ -26,7 +26,7 @@ export async function POST(request: Request) {
           color: 'white'
         }
       });
-      suggestedTiles = whiteTiles.map((tile) => ({
+      suggestedTiles = whiteTiles.map((tile: { name: string; color: string }) => ({
         name: tile.name,
         color: tile.color
       }));
@@ -36,7 +36,7 @@ export async function POST(request: Request) {
           color: 'black'
         }
       });
-      suggestedTiles = blackTiles.map((tile) => ({
+      suggestedTiles = blackTiles.map((tile: { name: string; color: string }) => ({
         name: tile.name,
         color: tile.color
       }));

@@ -1,5 +1,5 @@
 // app/api/tiles/route.ts
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient, Tile } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
@@ -17,7 +17,7 @@ export async function POST(request: Request) {
           }
         }
       });
-      suggestedTiles = whiteAndBlackTiles.map(tile => ({
+      suggestedTiles = whiteAndBlackTiles.map((tile: Tile) => ({
         name: tile.name,
         color: tile.color
       }));
@@ -27,7 +27,7 @@ export async function POST(request: Request) {
           color: 'white'
         }
       });
-      suggestedTiles = whiteTiles.map(tile => ({
+      suggestedTiles = whiteTiles.map((tile: Tile) => ({
         name: tile.name,
         color: tile.color
       }));
@@ -37,11 +37,12 @@ export async function POST(request: Request) {
           color: 'black'
         }
       });
-      suggestedTiles = blackTiles.map(tile => ({
+      suggestedTiles = blackTiles.map((tile: Tile) => ({
         name: tile.name,
         color: tile.color
       }));
     }
+    
 
     if (useType.includes('commercial')) {
       suggestedTiles = suggestedTiles.filter(tile => tile.color === 'black');

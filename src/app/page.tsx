@@ -72,7 +72,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-white flex items-center justify-center p-4">
       <Card className="w-full max-w-4xl bg-gray-800 text-gray-200 shadow-xl rounded-lg overflow-hidden border-none flex flex-col md:flex-row">
-        <div className="w-full  p-6">
+        <div className="w-full  py-6">
           <CardHeader className="mb-6">
             <motion.h2
               initial={{ opacity: 0, y: -20 }}
